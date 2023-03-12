@@ -36,8 +36,8 @@ public class Trabalhador {
 		Calendar calendario = Calendar.getInstance();
 		for (HoraContrato c : contratos) {
 			calendario.setTime(c.getData());
-			int c_ano = calendario.get(Calendar.MONTH);
-			int c_mes = 1 + calendario.get(Calendar.YEAR);
+			int c_ano = calendario.get(Calendar.YEAR);
+			int c_mes = 1 + calendario.get(Calendar.MONTH);
 			if (ano == c_ano && mes == c_mes) {
 				soma += c.valorTotal();
 			}
@@ -76,5 +76,11 @@ public class Trabalhador {
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
+
+	public List<HoraContrato> getContratos() {
+		return contratos;
+	}
+
+	
 
 }
